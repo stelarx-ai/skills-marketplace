@@ -1,0 +1,42 @@
+version: 1
+skills:
+  - id: chubbyskills
+    name: "Chubby Skills"
+    name_zh: "Chubby 内容采集技能包"
+    description: "Ingest Chinese content (Douyin/Bilibili/XHS/WeChat/X/Podcast) into your personal knowledge base"
+    description_zh: "把中文全渠道内容（抖音/B站/小红书/公众号/X/播客）采集进个人知识库"
+    icon: "🧰"
+    version: "0.10.0"
+    author: "chubbyguan"
+    homepage: "https://github.com/chubbyguan/chubbyskills"
+    tags: ["content", "transcription", "knowledge-base", "chinese"]
+    params:
+      - key: variant
+        label: "Installation Level"
+        label_zh: "安装级别"
+        type: select
+        default: "light"
+        options:
+          - value: "light"
+            label: "Light"
+            label_zh: "轻量安装"
+            description: "Text/image ingestion + KB management, no GPU needed"
+            description_zh: "图文采集 + 知识库管理，无需 GPU"
+          - value: "video"
+            label: "Full"
+            label_zh: "完整安装"
+            description: "Includes video transcription (needs ffmpeg + GPU)"
+            description_zh: "含视频转录（需 ffmpeg + GPU）"
+          - value: "all"
+            label: "All"
+            label_zh: "全部安装"
+            description: "All features including podcast transcription"
+            description_zh: "所有功能（含播客转录）"
+      - key: vault_dir
+        label: "Obsidian Vault Directory"
+        label_zh: "Obsidian 知识库目录"
+        type: text
+        default: ""
+        placeholder: "Leave empty to skip knowledge base integration"
+        placeholder_zh: "留空则跳过知识库集成"
+        optional: true
